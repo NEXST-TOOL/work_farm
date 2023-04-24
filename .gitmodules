@@ -1,0 +1,12 @@
+[submodule "software/linux"]
+	path = software/linux
+	url = ssh://git@gitlab.agileserve.org.cn:8082/ICT-SERVE-FARM/linux-xlnx.git
+[submodule "software/atf"]
+	path = software/atf
+	url = ssh://git@gitlab.agileserve.org.cn:8082/ICT-SERVE-FARM/arm-trusted-firmware.git
+[submodule "software/uboot"]
+	path = software/uboot
+	url = ssh://git@gitlab.agileserve.org.cn:8082/ICT-SERVE-FARM/u-boot-xlnx.git
+[submodule "bootstrap/dt-gen"]
+	path = bootstrap/dt-gen
+	url = ssh://git@gitlab.agileserve.org.cn:8082/ICT-SERVE-FARM/device-tree-xlnx.git
