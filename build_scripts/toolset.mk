@@ -21,6 +21,7 @@ COMPILER_BASE := $(VIVADO_TOOL_BASE_SW)/Vitis/$(VIVADO_VERSION_SW)/gnu
 # arm-none-eabi- (zynq_ELF) : used for compilation of FSBL on Zynq
 # mb- (microblaze-xilinx-elf-) : used for compilation of PMU Firmware
 # riscv64-unknown-linux-gnu- (riscv-LINUX) : used for compilation of RISC-V prototyping software
+# riscv64-unknown-elf- (riscv-ELF) : used for compilation of RISC-V baremetal software
 #=================================================
 zynqmp_LINUX_GCC_PATH := $(COMPILER_BASE)/aarch64/lin/aarch64-linux/bin
 zynqmp_ELF_GCC_PATH := $(COMPILER_BASE)/aarch64/lin/aarch64-none/bin
@@ -29,7 +30,7 @@ zynq_ELF_GCC_PATH := $(COMPILER_BASE)/aarch32/lin/gcc-arm-none-eabi/bin
 MB_GCC_PATH := $(COMPILER_BASE)/microblaze/lin/bin
 # TODO: Change to your install directory of RISC-V cross compiler
 riscv_LINUX_GCC_PATH := /opt/riscv64-linux/bin
-riscv_ELF_GCC_PATH := $(riscv_LINUX_GCC_PATH)
+riscv_ELF_GCC_PATH := /opt/riscv64-none/bin
 # TODO: Change to your install directory of RISC-V 32-bit cross compiler
 riscv32_LINUX_GCC_PATH := /opt/riscv32-none/bin
 riscv32_ELF_GCC_PATH := /opt/riscv32-none/bin
@@ -43,7 +44,7 @@ zynqmp_ELF_GCC_PREFIX := aarch64-none-elf-
 zynq_LINUX_GCC_PREFIX := arm-linux-gnueabi-
 zynq_ELF_GCC_PREFIX := arm-none-eabi-
 riscv_LINUX_GCC_PREFIX := riscv64-unknown-linux-gnu-
-riscv_ELF_GCC_PREFIX := $(riscv_LINUX_GCC_PREFIX)
+riscv_ELF_GCC_PREFIX := riscv64-unknown-elf-
 riscv32_LINUX_GCC_PREFIX := riscv32-unknown-elf-
 riscv32_ELF_GCC_PREFIX := riscv32-unknown-elf-
 mips_LINUX_GCC_PREFIX := mips-
