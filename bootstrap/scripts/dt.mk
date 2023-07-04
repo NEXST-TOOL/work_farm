@@ -57,7 +57,7 @@ endif
 	@mkdir -p $(abspath ../$(O)/dtbo)
 	$(EXPORT_DTC_PATH) && \
 		dtc -O dtb -o $@ -b 0 -@ $(patsubst %.dtbo,%.dtsi,$@)
-	cp $@ $(abspath ../$(O)/dtbo/)
+	mv $@ $(abspath ../$(O)/dtbo/)
 
 .dt_gen:
 	$(XSCT) $(DT_XSCT_FLAGS)
