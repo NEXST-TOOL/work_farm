@@ -13,7 +13,7 @@ SYS_DT := $(PRJ_DT_LOC)/design_top.dtsi
 
 # DTB overlay
 ifeq ($(ARCH),)
-OVERLAY_DTSI := $(wildcard $(PRJ_DT_LOC)/overlay/*.dtsi)
+OVERLAY_DTSI := $(wildcard $(abspath $(PRJ_DT_LOC))/overlay/*.dtsi)
 OVERLAY_DTBO := $(patsubst %.dtsi,%.dtbo,$(OVERLAY_DTSI))
 endif
 
@@ -53,11 +53,11 @@ endif
 		dtc -I dts -O dtb -o $@ -
 	cp $@ $(KERN_DTB)
 
-%.dtbo:
-	@mkdir -p $(O)/dtbo
+%.dtbo: FORCE
+	@mkdir -p $(abspath ../$(O)/dtbo)
 	$(EXPORT_DTC_PATH) && \
 		dtc -O dtb -o $@ -b 0 -@ $(patsubst %.dtbo,%.dtsi,$@)
-	@mv $@ $(O)/dtbo/
+	cp $@ $(abspath ../$(O)/dtbo/)
 
 .dt_gen:
 	$(XSCT) $(DT_XSCT_FLAGS)
@@ -74,7 +74,7 @@ endif
 	@touch $@
 
 dt_clean:
-	@rm -f $(DTB) $(O)/dtbo $(KERN_DTB)
+	@rm -f $(DTB) $(abspath ../$(O)/dtbo) $(KERN_DTB)
 
 dt_distclean:
 	@rm -rf .dt_gen .dt_cp $(KERN_DTB) $(DTB) $(O)/dtbo

@@ -4,7 +4,7 @@ BIF_GEN := $(BOOT_STRAP_LOC)/scripts/bif_gen.sh
 BIF_FILE := $(BOOT_BIN_LOC)/boot_gen.bif
 
 ifneq ($(O),)
-BOOT_BIN := $(O)/$(OS)/BOOT.bin
+BOOT_BIN := $(abspath ../$(O)/$(OS)/BOOT.bin)
 endif
 BOOT_BIN ?= $(BOOT_BIN_LOC)/BOOT.bin
 
