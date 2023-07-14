@@ -9,10 +9,10 @@ touch $BIF_FILE
 echo "the_ROM_image:
 {" > $BIF_FILE
 
-# cache coherence support
-if [ "$5" = "y" ];
+# project custom init file
+if [ "$5" != "none" ];
 then
-	echo -e "	[init] ../scripts/cache_coherent.init" >> $BIF_FILE
+	echo -e "	[init] $5" >> $BIF_FILE
 fi
 
 # zynqmp specific header
