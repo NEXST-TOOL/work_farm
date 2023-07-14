@@ -1,4 +1,10 @@
-PRJ_DT_LOC := $(abspath ./$(TARGET_LOC)/$(TARGET_PRJ)/dt)
+PRJ_DT_LOC_TMP := $(abspath ./$(TARGET_LOC)/$(TARGET_PRJ)/dt)
+
+ifeq ($(wildcard $(PRJ_DT_LOC_TMP)/*.dtsi),)
+PRJ_DT_LOC := $(PRJ_DT_LOC_TMP)/$(FPGA_BD) 
+else
+PRJ_DT_LOC := $(PRJ_DT_LOC_TMP)
+endif
 
 # TODO: Change to your own compilation flags
 fsbl-flag := COMPILER_PATH=$(ELF_GCC_PATH) \
