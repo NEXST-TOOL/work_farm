@@ -8,7 +8,7 @@ BOOTBIN_DEP += uboot
 obj-bootbin-clean-y := $(foreach obj,$(BOOTBIN_DEP),$(obj)_clean)
 obj-bootbin-dist-y := $(foreach obj,$(BOOTBIN_DEP),$(obj)_distclean)
 
-ifneq ($(TARGET_DESIGN),)
+ifneq ($(TARGET_LOC),shell)
 CUSTOM_INIT := $(wildcard $(abspath ./$(TARGET_LOC)/$(TARGET_PRJ)/$(TARGET_DESIGN)/init/$(FPGA_BD).init))
 else
 CUSTOM_INIT := $(wildcard $(abspath ./$(TARGET_LOC)/$(TARGET_PRJ)/init/$(FPGA_BD).init))
