@@ -1,12 +1,12 @@
 [submodule "software/linux"]
 	path = software/linux
-	url = ../../ICT-SERVE-FARM/linux-xlnx.git
+	url = ../linux-xlnx.git
 [submodule "software/atf"]
 	path = software/atf
-	url = ../../ICT-SERVE-FARM/arm-trusted-firmware.git
+	url = ../arm-trusted-firmware.git
 [submodule "software/uboot"]
 	path = software/uboot
-	url = ../../ICT-SERVE-FARM/u-boot-xlnx.git
+	url = ../u-boot-xlnx.git
 [submodule "bootstrap/dt-gen"]
 	path = bootstrap/dt-gen
-	url = ../../ICT-SERVE-FARM/device-tree-xlnx.git
+	url = ../device-tree-xlnx.git
