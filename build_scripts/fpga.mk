@@ -20,6 +20,6 @@ FPGA_VAL ?=
 # launch Vivado Toolset
 vivado_prj: FORCE
 	@mkdir -p $(HW_PLATFORM)
-	$(MAKE) -C ./fpga VIVADO=$(VIVADO_BIN) FPGA_BD=$(FPGA_BD) FPGA_PRJ=$(PRJ) \
+	$(EXPORT_VIVADO_PATH) $(MAKE) -C ./fpga VIVADO=$(VIVADO_BIN) FPGA_BD=$(FPGA_BD) FPGA_PRJ=$(PRJ) \
 		FPGA_ACT=$(FPGA_ACT) FPGA_VAL="$(FPGA_VAL)" O=$(HW_PLATFORM) $@
 

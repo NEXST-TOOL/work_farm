@@ -1,12 +1,3 @@
 [submodule "software/linux"]
 	path = software/linux
 	url = ../linux-xlnx.git
-[submodule "software/atf"]
-	path = software/atf
-	url = ../arm-trusted-firmware.git
-[submodule "software/uboot"]
-	path = software/uboot
-	url = ../u-boot-xlnx.git
-[submodule "bootstrap/dt-gen"]
-	path = bootstrap/dt-gen
-	url = ../device-tree-xlnx.git
