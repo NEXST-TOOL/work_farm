@@ -1,3 +1,3 @@
 # device and board
-set device xc7z035ffg676-2
+set device xcvu19p-fsva3824-2-e
 set bd_part ""
