@@ -5,7 +5,7 @@ VIVADO_TOOL_BASE ?= /opt/Xilinx_$(VIVADO_VERSION)
 # Vivado and SDK tool executable binary location
 VIVADO_TOOL_PATH := $(VIVADO_TOOL_BASE)/Vivado/$(VIVADO_VERSION)/bin
 
-EXPORT_VIVADO_PATH := export PATH=$(VIVADO_TOOL_PATH)::$$PATH
+EXPORT_VIVADO_PATH := export PATH=$(VIVADO_TOOL_PATH):$$PATH
 
 LINUX_GCC_PREFIX ?= riscv64-linux-gnu-
 
