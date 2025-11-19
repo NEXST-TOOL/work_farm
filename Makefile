@@ -12,9 +12,9 @@ SYS_HDF := $(HW_PLATFORM)/system.hdf
 
 # Temporal directory to save all image files for porting
 ifneq ($(TARGET_DESIGN),)
-INSTALL_LOC := $(TARGET_LOC)/$(TARGET_PRJ)/ready_for_download/$(TARGET_DESIGN)_$(FPGA_BD)
+INSTALL_LOC := $(TARGET_LOC)/$(TARGET_PRJ)/sw_plat/$(TARGET_DESIGN)_$(FPGA_BD)
 else
-INSTALL_LOC := $(TARGET_LOC)/$(TARGET_PRJ)/ready_for_download/$(FPGA_BD)
+INSTALL_LOC := $(TARGET_LOC)/$(TARGET_PRJ)/sw_plat/$(FPGA_BD)
 endif
 
 .PHONY: FORCE
