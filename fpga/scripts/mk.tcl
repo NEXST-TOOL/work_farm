@@ -5,6 +5,9 @@
 # Date: 22/04/2023
 #========================================================
 
+# Set max thread count to 32
+set_param general.maxThreads 32
+
 # parsing argument
 if {$argc != 5} {
 	puts "Error: The argument should be fpga_act fpga_val output_dir fpga_board prj_param"
@@ -26,7 +29,7 @@ set prj_param_len [llength ${prj_param}]
 if { ${prj_param_len} == "3"} {
 	set prj_design [lindex ${prj_param} 2]
 } else {
-	set prj_design "" 
+	set prj_design ""
 }
 
 set design_dir ${script_dir}/../../${prj_loc}/${prj_name}/scripts
@@ -47,10 +50,10 @@ if {$act == "prj_gen"} {
 	# project setup
 	source [file join $script_dir "prj_setup.tcl"]
 	source [file join $design_dir "prj_setup.tcl"]
-	
+
 	# Generate HDF
 	write_hwdef -force -file ${out_dir}/system.hdf
-	
+
 	close_project
 
 } elseif {$act == "run_syn"} {
